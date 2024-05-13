@@ -36,12 +36,8 @@ function addContact() {
       email.value = "";
       num.value = "";
 
-        const content = document.querySelector("#content-form");
-        content.style.fontSize = "xx-large";
-        content.textContent = "Congrats! You have been added to the Contacts List! Go do something awesome!"
-        content.style.padding = "50px";
-        content.style.color = "#515625";
-        
+      window.location.replace("./pages/post-signup.html");
+      
   }
 
 function val(){

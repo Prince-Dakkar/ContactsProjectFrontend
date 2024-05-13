@@ -1,0 +1,53 @@
+@font-face {
+    font-family: norse-bold;
+    src: url(../fonts/Norse-Bold.otf);
+}
+html, body {
+    height: 100%;
+    --earth-green:  #515625;
+    --form-dark: rgb(245, 241, 232);
+    --form-light: white;
+    --form-offset: 50px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    /* font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+}
+#page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+a {
+    font-style: none;
+    text-decoration: none;
+    color: white;
+}
+#congrats {
+    font-size: calc(20px + 1vw);
+    font-weight: bold;
+    width: 80%;
+    margin-bottom: 20px;
+}
+#contacts-container {
+    padding-top: 30px;
+    border: 2px solid black;
+    width: 80%;
+    height: 60%;
+}
+#contacts-scroll {
+    /* padding: 10px; */
+    /* border: 2px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    overflow: scroll;
+    scrollbar-color: var(--earth-green) var(--form-dark);
+    scrollbar-width: thin;
+    justify-content: space-around;
+    gap: 30px;
+}
+.card {
+    width: 300px;
+    height: 300px;
+    border: 4px solid var(--earth-green);
+}
