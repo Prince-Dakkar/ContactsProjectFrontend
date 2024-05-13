@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Odin Sign Up Page Project</title>
+        <link rel ="stylesheet" href="./css/style.css">
+        <script src="./js/script.js" defer></script>
+    </head>
+    <body>
+        <div id="page">
+            <div id="bg-image">
+                <div id="banner"> 
+                    <div id="odin-image">
+                        <img id="odin" src="./images/odin-lined.png">
+                    </div>
+                    <div id="logo">
+                        Odin
+                    </div>
+                </div>
+
+                <div id="photo-attribute">Photo by <a href="https://unsplash.com/@amyjoyhumphries?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+                    Amy Humphries</a> on <a href="https://unsplash.com/photos/green-fern-plant-on-brown-tree-trunk-TwL7bXPJrxc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+                        Unsplash</a></div>
+            </div>
+
+            <div id="main-content">
+                <div id="content-header">
+                    <p class="header-msg">This is not a real online service! You know you need something like this in your life to help realize your
+                        deepest dream. Sign up <em>now</em> to get started.
+                    </p>
+                    <p class="header-msg">You <em>know</em> you want to.</p>
+                </div>
+                <div id="content-form">
+
+                    <!-- https://httpbin.org/post  http://localhost:5050/api/contacts -->
+
+                    <form method="POST" action="javascript:void(0);" onsubmit="addContact()" >  
+                        <div id="form-main">
+                            <p id="msg">Let's do this!</p>
+
+                            <fieldset id="fieldset">
+                                <div id="first">
+                                    <label for="firstName">FIRST NAME:</label>
+                                    <input type="text" id="first-name" name="firstName" size="40" required minlength="2" placeholder="2+ chars">
+                                </div>
+                                
+                                <div id="last">
+                                    <label for="lastName">LAST NAME:</label>
+                                    <input type="text" id="last-name" name="lastName" size="40" required  minlength="3" placeholder="3+ chars">
+                                </div>
+
+                                <div id="email">
+                                    <label for="e">EMAIL:</label>
+                                    <input type="email" id="e" name="email" size="40" required maxlength="50">
+                                </div>
+
+                                <div id="number">
+                                    <label for="phoneNumber">PHONE NUMBER:</label>
+                                    <input type="tel" id="phone-number" name="phoneNumber" size="40" required  pattern="(\d{3}-\d{3}-\d{4})" placeholder="123-456-7890">
+                                </div>
+                                
+                                <div id="pass">
+                                    <label for="password">PASSWORD:</label>
+                                    <input class="password" type="password" id="password" name="password" placeholder="password (8-16 chars)" size="40" required minlength="8"  maxlength="16">
+                                </div>
+                                
+                                <!-- I don't need the confirmed password -->
+                                <div id="confirm">
+                                    <label for="password-confirm">CONFIRM PASSWORD:</label>
+                                    <input class="password" type="password" id="password-confirm" placeholder="retype password" size="40" required minlength="8"  maxlength="16">
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div id="submit">
+                            <button type="submit" id="submit-btn" onclick="return val()"> Create Account</button>
+                            <p id="already">Already have an account? <span id="log-in"><a id="log-in-btn" href="#">Log in</a></span></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- Photo by <a href="https://unsplash.com/@haliewestphoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Halie West</a> on <a href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
+    <!-- Photo by <a href="https://unsplash.com/@amyjoyhumphries?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Amy Humphries</a> on <a href="https://unsplash.com/photos/green-fern-plant-on-brown-tree-trunk-TwL7bXPJrxc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
+</html>

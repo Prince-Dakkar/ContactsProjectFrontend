@@ -1,0 +1,155 @@
+/* General --------------------------------------------------------------------------- */
+input[type='submit'], button, [aria-label] {
+    cursor: pointer;
+}
+@font-face {
+    font-family: norse-bold;
+    src: url(../fonts/Norse-Bold.otf);
+}
+html, body {
+    height: 100%;
+    --earth-green:  #515625;
+    --form-dark: rgb(245, 241, 232);
+    --form-light: white;
+    --form-offset: 50px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    /* font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+}
+#page {
+    display: flex;
+    height: 100%;
+}
+a {
+    font-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+/* Left side of page --------------------------------------------------------------------------- */
+img {
+    object-fit: cover;
+}
+#bg-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    background-image: url("../images/fungas-wood-amy.jpg");
+    width: 30%;
+    flex-basis: 1;
+    background-size: cover;
+    flex-shrink: 0;
+    text-align: center;
+    min-width: 250px;
+}
+#photo-attribute {
+    margin-bottom: 20px;
+}
+#banner {
+    position: relative;
+    margin-top: 35%;
+    background-color: rgba(0, 0, 0, .7);
+    height: 150px;
+    font-size: 6em;
+    font-family: norse-bold;
+    display: flex;
+    justify-content: center;
+}
+#logo {
+    text-align: left;
+    align-content: center;
+}
+#odin-image{
+    align-content:end;
+    text-align: right;
+    /* width: 35%; */
+    flex-shrink: 0;
+}
+#odin {
+    height: 85%;
+    flex-shrink: 0;
+}
+
+/* Right side of page  --------------------------------------------------------------------------*/
+    /* First Section ------------------------------------------------------- */
+#content-header {
+    height: 35%;
+    background-color: var(--form-dark);
+}
+#content-header {
+    font-size: calc(20px + 1vw);
+    /* border: 2px solid blue; */
+    padding-top: var(--form-offset);
+    font-weight: bold;
+}
+.header-msg {
+    margin-left: var(--form-offset);
+    margin-right: var(--form-offset);
+}
+    /* Second Section ------------------------------------------------------ */
+#main-content{
+    display: flex;
+    flex-direction: column;
+}
+#content-form {
+    /* height: 65%; */
+    /* border: 2px solid red; */
+}
+#confirm, #pass, #first, #last, #email, #number {
+    display: flex;
+    flex-direction: column;
+}
+#msg {
+    font-size: calc(16px +  1vw);
+    margin-left: var(--form-offset);
+    margin-bottom: 0;
+    margin-top: calc(var(--form-offset)/2);
+}
+#fieldset {
+    padding: var(--form-offset);
+    /* border: 2px solid orange; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    gap: 20px;
+    border: 0;
+    justify-content: space-between;
+}
+input.password:invalid {
+    border-color: red;
+    border-radius: 3px;
+}
+input:focus {
+    outline-color: BLUE;
+    outline-width: 1px;
+    border-radius: 3px;
+    box-shadow: 4px 5px 4px var(--earth-green);
+}
+#form-main {
+    box-shadow: 4px 5px 8px var(--earth-green);
+    border: 2px solid var(--form-light);
+    height: 50%;
+}
+
+    /* Third Section ------------------------------------------------------- */
+#submit {
+    display: flex;
+    flex-direction: column;
+}
+#already {
+    margin-left: var(--form-offset);
+}
+#log-in-btn{
+    color: var(--earth-green);
+    font-weight: bold;
+}
+#submit-btn {
+    border-radius: 5px;
+    width: 200px;
+    margin-left: var(--form-offset);
+    margin-top: var(--form-offset);
+    padding: 10px 15px 10px 15px;
+    background-color: var(--earth-green);
+    color: white;
+    font-size: large;
+}
