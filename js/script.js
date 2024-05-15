@@ -2,7 +2,7 @@ const uri = 'http://localhost:5050/api/contacts';
 let contacts = [];
 
 
-function addContact() {
+async function addContact() {
     const firstName = document.querySelector('#first-name');
     const lastName = document.querySelector('#last-name');
     const email = document.querySelector('#e');
@@ -24,7 +24,7 @@ function addContact() {
       msg: msg.value
     };
   
-    fetch(uri, {
+    const xx = await fetch(uri, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -47,7 +47,7 @@ function addContact() {
       // pass_c.value = "";
       // email.value = "";
       // num.value = "";
-
+      console.log(xx);
       window.location.replace("./pages/message-board.html");
   }
 

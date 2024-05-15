@@ -18,6 +18,10 @@ html, body {
 #page {
     display: flex;
     height: 100%;
+    /* border: 2px solid green; */
+}
+body {
+    /* border: 2px solid blue; */
 }
 a {
     font-style: none;
@@ -41,6 +45,8 @@ img {
     flex-shrink: 0;
     text-align: center;
     min-width: 250px;
+    /* border: 2px solid red; */
+    height: 100%;
 }
 #photo-attribute {
     margin-bottom: 20px;
@@ -75,7 +81,7 @@ img {
 #content-header {
     /* height: 35%; */
     background-color: var(--form-dark);
-    /* min-width: 300px; */
+    min-width: 400px;
 }
 #content-header {
     font-size: calc(16px + 1vw);
@@ -91,10 +97,14 @@ img {
 #main-content{
     display: flex;
     flex-direction: column;
+    /* border: 2px solid red; */
+    overflow: scroll;
+    /* min-width: 800px; */
 }
 #content-form {
     /* height: 65%; */
-    /* border: 2px solid red; */
+    /* border: 2px solid green; */
+    min-width: 400px;
 }
 #confirm, #pass, #first, #last, #email, #number {
     display: flex;
@@ -117,6 +127,7 @@ img {
     gap: 20px;
     border: 0;
     justify-content: space-between;
+    /* border: 2px solid red; */
 }
 input.password:invalid {
     border-color: red;
@@ -163,4 +174,6 @@ input:focus {
 }
 #user-msg, #message {
     width: 100%;
+    max-width: 100%;
 }
+textarea { resize: vertical; }

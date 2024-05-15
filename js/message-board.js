@@ -1,12 +1,22 @@
-const uri = 'http://localhost:5050/api/contacts';
+const contacts_uri = 'http://localhost:5050/api/contacts';
+const actions_uri = 'http://localhost:5050/api/postActions';
+
+const postAction = {
+  id: null,
+  leaveKudos : true,
+  reportMsg : false,
+  msg: null
+};
+
 
 function populate() {
     const scrollpane = document.querySelector("#contacts-scroll");
   
-    fetch(uri)
+    fetch(contacts_uri)
       .then(response => response.json())
       .then(data => {
         for (let i = 0; i < Math.min(data.length, 20); i++) {
+
           // Create the card
           const card = document.createElement("div");
           card.style.width = "300px";
@@ -15,7 +25,7 @@ function populate() {
           card.style.padding = "20px";
           card.style.border = "1px solid var(--earth-green)";
           card.style.borderRadius = "10px";
-          card.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
+          card.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.7)";
           card.style.overflow = "hidden";
   
           // Get the values from the database data
@@ -27,6 +37,7 @@ function populate() {
           // Create the card contents
           const userName = document.createElement("h3");
           userName.textContent = userNameValue;
+          userName.style.marginTop = "0px";
 
           const userEmail = document.createElement("p");
           if (data[i].EmailHide) {
@@ -41,7 +52,6 @@ function populate() {
           } else {
             userPhone.textContent = "User has hidden Phone#."
           }
-          
 
           const userMessage = document.createElement("div");
           userMessage.style.overflowY = "auto";
@@ -50,12 +60,68 @@ function populate() {
           userMessage.style.border = "1px solid var(--earth-green)";
           userMessage.style.borderRadius = "4px";
           userMessage.style.padding = "4px";
+ 
+
+          const report = document.createElement("button");
+          report.textContent = "Report";
+          report.style.marginLeft = "10px";
+          const kudos = document.createElement("button");
+          kudos.textContent = "Kudos!";
+          
+          const numKudos = document.createElement("label");
+          numKudos.textContent = "Kudos: " + data[i].Kudos;
+          numKudos.style.marginLeft = "40px";
+
+          report.addEventListener('click', async _ => {
+            postAction.id = data[i].Id;
+            postAction.reportMsg = true;
+            postAction.leaveKudos = false;
+            postAction.msg = "rand";
+            try {     
+              const response = await fetch(actions_uri, {
+                method: 'post',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(postAction)
+              });
+              console.log('Completed!', response);
+              location.reload();
+            } catch(err) {
+              console.error(`Error: ${err}`);
+            }
+          });
+
+          kudos.addEventListener('click', async _ => {
+            postAction.id = data[i].Id;
+            postAction.reportMsg = false;
+            postAction.leaveKudos = true;
+            postAction.msg = "rand";
+            try {     
+              const response = await fetch(actions_uri, {
+                method: 'post',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(postAction)
+              });
+              console.log('Completed!', response);
+              location.reload();
+            } catch(err) {
+              console.error(`Error: ${err}`);
+            }
+          });
           
           // Add the contents to the card
           card.appendChild(userName);
           card.appendChild(userEmail);
           card.appendChild(userPhone);
           card.appendChild(userMessage);
+          card.appendChild(kudos);
+          card.appendChild(report);
+          card.appendChild(numKudos);
   
           // Add the card to the scroll pane
           scrollpane.appendChild(card);
