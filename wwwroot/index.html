@@ -26,10 +26,10 @@
 
             <div id="main-content">
                 <div id="content-header">
-                    <p class="header-msg">This is not a real online service! You know you need something like this in your life to help realize your
-                        deepest dream. Sign up <em>now</em> to get started.
+                    <p class="header-msg">Post a Message of Positivity! You know you want something like this in <em>your</em> life... so pass it
+                        on to someone else <em>now</em> to get started.
                     </p>
-                    <p class="header-msg">You <em>know</em> you want to.</p>
+                    <p class="header-msg">You <em>know</em> you want to. :)</p>
                 </div>
                 <div id="content-form">
 
@@ -42,12 +42,12 @@
                             <fieldset id="fieldset">
                                 <div id="first">
                                     <label for="firstName">FIRST NAME:</label>
-                                    <input type="text" id="first-name" name="firstName" size="40" required minlength="2" placeholder="2+ chars">
+                                    <input type="text" id="first-name" name="firstName" size="40" required minlength="2" maxlength="10" placeholder="2-10 chars">
                                 </div>
                                 
                                 <div id="last">
                                     <label for="lastName">LAST NAME:</label>
-                                    <input type="text" id="last-name" name="lastName" size="40" required  minlength="3" placeholder="3+ chars">
+                                    <input type="text" id="last-name" name="lastName" size="40" required  minlength="3" maxlength="12" placeholder="3-12 chars">
                                 </div>
 
                                 <div id="email">
@@ -70,17 +70,32 @@
                                     <label for="password-confirm">CONFIRM PASSWORD:</label>
                                     <input class="password" type="password" id="password-confirm" placeholder="retype password" size="40" required minlength="8"  maxlength="16">
                                 </div>
+
+                                <div id="user-msg">
+                                    <textarea name="message" id="message"  required placeholder="What's your message?..."></textarea>
+                                </div>
+
+                                <div id="check">
+                                    <div id="email-check">
+                                        <label for="check-email">Ok to Publish my Email?</label>
+                                        <input class="check" type="checkbox" id="check-email">
+                                    </div>
+                                    
+                                    <div id="phone-check">
+                                        <label for="check-phone">Ok to Publish my Phone Number?</label>
+                                        <input class="check" type="checkbox" id="check-phone">
+                                    </div>
+                                    
+                                </div>
                             </fieldset>
                         </div>
                         <div id="submit">
-                            <button type="submit" id="submit-btn" onclick="return val()"> Create Account</button>
-                            <p id="already">Already have an account? <span id="log-in"><a id="log-in-btn" href="#">Log in</a></span></p>
+                            <button type="submit" id="submit-btn" onclick="return val()"> Post </button>
+                            <p id="already">Already posted before? <span id="log-in"><a id="log-in-btn" href="#">Log in</a></span></p>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </body>
-    <!-- Photo by <a href="https://unsplash.com/@haliewestphoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Halie West</a> on <a href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
-    <!-- Photo by <a href="https://unsplash.com/@amyjoyhumphries?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Amy Humphries</a> on <a href="https://unsplash.com/photos/green-fern-plant-on-brown-tree-trunk-TwL7bXPJrxc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
 </html>

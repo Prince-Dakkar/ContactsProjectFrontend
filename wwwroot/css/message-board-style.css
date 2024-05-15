@@ -26,7 +26,7 @@ a {
     font-size: calc(20px + 1vw);
     font-weight: bold;
     width: 80%;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 #contacts-container {
     padding-top: 30px;
@@ -35,8 +35,6 @@ a {
     height: 60%;
 }
 #contacts-scroll {
-    /* padding: 10px; */
-    /* border: 2px solid red; */
     display: flex;
     flex-wrap: wrap;
     height: 100%;

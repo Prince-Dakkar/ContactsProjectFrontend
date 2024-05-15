@@ -73,13 +73,14 @@ img {
 /* Right side of page  --------------------------------------------------------------------------*/
     /* First Section ------------------------------------------------------- */
 #content-header {
-    height: 35%;
+    /* height: 35%; */
     background-color: var(--form-dark);
+    /* min-width: 300px; */
 }
 #content-header {
-    font-size: calc(20px + 1vw);
+    font-size: calc(16px + 1vw);
     /* border: 2px solid blue; */
-    padding-top: var(--form-offset);
+    padding-top: 20px;
     font-weight: bold;
 }
 .header-msg {
@@ -100,13 +101,15 @@ img {
     flex-direction: column;
 }
 #msg {
-    font-size: calc(16px +  1vw);
+    font-size: calc(12px +  1vw);
     margin-left: var(--form-offset);
     margin-bottom: 0;
     margin-top: calc(var(--form-offset)/2);
+    margin-bottom: 10px;
 }
 #fieldset {
-    padding: var(--form-offset);
+    padding-left: var(--form-offset);
+    padding-right: var(--form-offset);
     /* border: 2px solid orange; */
     display: flex;
     flex-wrap: wrap;
@@ -137,7 +140,7 @@ input:focus {
     flex-direction: column;
 }
 #already {
-    margin-left: var(--form-offset);
+    margin-left: calc(10px + 1vw);
 }
 #log-in-btn{
     color: var(--earth-green);
@@ -146,11 +149,18 @@ input:focus {
 #submit-btn {
     border-radius: 5px;
     width: 200px;
-    margin-left: var(--form-offset);
-    margin-top: var(--form-offset);
+    margin-left: calc(10px + 1vw);
+    margin-top: calc(10px + 1vw);
     padding: 10px 15px 10px 15px;
     background-color: var(--earth-green);
     color: white;
     font-size: large;
 }
-
+#check {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+#user-msg, #message {
+    width: 100%;
+}

@@ -1,6 +1,7 @@
 const uri = 'http://localhost:5050/api/contacts';
 let contacts = [];
 
+
 function addContact() {
     const firstName = document.querySelector('#first-name');
     const lastName = document.querySelector('#last-name');
@@ -8,13 +9,19 @@ function addContact() {
     const pass = document.querySelector('#password');
     const num = document.querySelector('#phone-number');
     const pass_c = document.querySelector('#password-confirm');
+    const e_allow = document.querySelector('#check-email').checked;
+    const p_allow = document.querySelector('#check-phone').checked;
+    const msg = document.querySelector('#message');
   
     const contact = {
       firstName: firstName.value,
       lastName: lastName.value,
       email: email.value,
       password: pass.value,
-      phoneNumber: num.value
+      phoneNumber: num.value,
+      emailHide: e_allow,
+      phoneHide: p_allow,
+      msg: msg.value
     };
   
     fetch(uri, {
@@ -26,18 +33,22 @@ function addContact() {
       body: JSON.stringify(contact)
     })
       .then(response => response.json())
-      .catch(error => console.error('Unable to add contact.', error));
+      .catch(error => {
+        
+        console.error('Unable to add contact.', error);
+        setTimeout(10000);
 
-      firstName.value = "";
-      lastName.value = "";
-      email.value = "";
-      pass.value = "";
-      pass_c.value = "";
-      email.value = "";
-      num.value = "";
+      });
 
-      window.location.replace("./pages/post-signup.html");
-      
+      // firstName.value = "";
+      // lastName.value = "";
+      // email.value = "";
+      // pass.value = "";
+      // pass_c.value = "";
+      // email.value = "";
+      // num.value = "";
+
+      window.location.replace("./pages/message-board.html");
   }
 
 function val(){
