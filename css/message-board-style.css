@@ -49,3 +49,15 @@ a {
     height: 300px;
     border: 4px solid var(--earth-green);
 }
+#congrats-msg {
+    margin-bottom: 0px;
+}
+#log-out {
+    border-radius: 5px;
+    width: 150px;
+    margin-top: calc(10px + 1vw);
+    padding: 10px 10px 10px 10px;
+    background-color: var(--earth-green);
+    color: white;
+    font-size: large;
+}
