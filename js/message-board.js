@@ -2,10 +2,10 @@ const contacts_uri = 'http://localhost:5050/api/contacts';
 const actions_uri = 'http://localhost:5050/api/postActions';
 
 const postAction = {
-  id: null,
+  contactid: null,
   leaveKudos : true,
   reportMsg : false,
-  msg: null
+  kudos: 0
 };
 
 
@@ -65,18 +65,23 @@ function populate() {
           const report = document.createElement("button");
           report.textContent = "Report";
           report.style.marginLeft = "10px";
+
+
           const kudos = document.createElement("button");
-          kudos.textContent = "Kudos!";
+          kudos.textContent = "△";
+
+          const down = document.createElement("button");
+          down.textContent = "▽";
           
           const numKudos = document.createElement("label");
           numKudos.textContent = "Kudos: " + data[i].Kudos;
           numKudos.style.marginLeft = "40px";
+          numKudos.style.fontSize = "large";   
 
           report.addEventListener('click', async _ => {
-            postAction.id = data[i].Id;
+            postAction.contactid = data[i].Id;
             postAction.reportMsg = true;
             postAction.leaveKudos = false;
-            postAction.msg = "rand";
             try {     
               const response = await fetch(actions_uri, {
                 method: 'post',
@@ -94,10 +99,31 @@ function populate() {
           });
 
           kudos.addEventListener('click', async _ => {
-            postAction.id = data[i].Id;
+            postAction.contactid = data[i].Id;
             postAction.reportMsg = false;
             postAction.leaveKudos = true;
-            postAction.msg = "rand";
+            postAction.kudos = 1;
+            try {     
+              const response = await fetch(actions_uri, {
+                method: 'post',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(postAction)
+              });
+              console.log('Completed!', response);
+              location.reload();
+            } catch(err) {
+              console.error(`Error: ${err}`);
+            }
+          });
+
+          down.addEventListener('click', async _ => {
+            postAction.contactid = data[i].Id;
+            postAction.reportMsg = false;
+            postAction.leaveKudos = true;
+            postAction.kudos = -1;
             try {     
               const response = await fetch(actions_uri, {
                 method: 'post',
@@ -120,6 +146,7 @@ function populate() {
           card.appendChild(userPhone);
           card.appendChild(userMessage);
           card.appendChild(kudos);
+          card.appendChild(down);
           card.appendChild(report);
           card.appendChild(numKudos);
   

@@ -117,6 +117,13 @@ img {
     margin-top: calc(var(--form-offset)/2);
     margin-bottom: 10px;
 }
+#msg-log-in {
+    font-size: calc(12px +  1vw);
+    margin-left: var(--form-offset);
+    margin-bottom: 0;
+    margin-top: var(--form-offset);
+    margin-bottom: var(--form-offset);
+}
 #fieldset {
     padding-left: var(--form-offset);
     padding-right: var(--form-offset);
@@ -140,9 +147,15 @@ input:focus {
     box-shadow: 4px 5px 4px var(--earth-green);
 }
 #form-main {
+    box-shadow: 4px 5p var(--form-light);
+    height: 50%;
+}
+
+#form-log-in {
     box-shadow: 4px 5px 8px var(--earth-green);
     border: 2px solid var(--form-light);
     height: 50%;
+    padding-bottom: var(--form-offset);;
 }
 
     /* Third Section ------------------------------------------------------- */

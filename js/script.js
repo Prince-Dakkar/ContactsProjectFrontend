@@ -1,7 +1,7 @@
 const uri = 'http://localhost:5050/api/contacts';
-let contacts = [];
 
-
+// I made this async in an attempt to fix the wierd glitch where everything validates correctly
+// and the post-signup page is hit but no contact was made in the database.
 async function addContact() {
     const firstName = document.querySelector('#first-name');
     const lastName = document.querySelector('#last-name');
@@ -61,18 +61,14 @@ function val(){
         console.log("Password mismatch...");
         password.style.borderColor = "red";
         confirm_password.style.borderColor = "red";
-
         password.value = "";   //.
         confirm_password.value = "";
-
         const msg = document.createElement("p");
         msg.textContent = "*Passwords must match";
         msg.style.marginTop = "0";
         msg.style.color = "red";
         msg.style.fontSize = "small";
-
         password_div.appendChild(msg);
-
         return false;
     }
     console.log("Password Match!");

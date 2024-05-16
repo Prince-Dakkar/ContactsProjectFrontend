@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Log In</title>
+        <link rel ="stylesheet" href="../css/style.css">
+        <script src="../js/log-in.js" defer></script>
+    </head>
+    <body>
+        <div id="page">
+            <div id="bg-image">
+                <div id="banner"> 
+                    <div id="odin-image">
+                        <img id="odin" src="../images/odin-lined.png">
+                    </div>
+                    <div id="logo">
+                        Odin
+                    </div>
+                </div>
+
+                <div id="photo-attribute">Photo by <a href="https://unsplash.com/@amyjoyhumphries?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+                    Amy Humphries</a> on <a href="https://unsplash.com/photos/green-fern-plant-on-brown-tree-trunk-TwL7bXPJrxc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+                        Unsplash</a></div>
+            </div>
+
+            <div id="main-content">
+                <div id="content-header">
+                    <p class="header-msg">Log in with your first name, last name and password below to view the Messages Board.
+                    </p>
+                    <p class="header-msg">You <em>know</em> you want to. :)</p>
+                </div>
+                <div id="content-form">
+                    <form method="POST" action="javascript:void(0);" onsubmit="val()" >  
+                        <div id="form-log-in">
+                            <p id="msg-log-in">Let's do this!</p>
+
+                            <fieldset id="fieldset">
+                               
+                                <div id="first">
+                                    <label for="firstName">FIRST NAME:</label>
+                                    <input type="text" id="first-name" name="firstName" size="40" required minlength="1" maxlength="10" placeholder="1-10 chars">
+                                </div>
+                                
+                                <div id="last">
+                                    <label for="lastName">LAST NAME:</label>
+                                    <input type="text" id="last-name" name="lastName" size="40" required  minlength="1" maxlength="12" placeholder="1-12 chars">
+                                </div>
+
+                                <div id="pass">
+                                    <label for="password">PASSWORD:</label>
+                                    <input class="password" type="password" id="password" name="password" placeholder="password (4-16 chars)" size="40" required minlength="4"  maxlength="16">
+                                </div>
+                                
+                              
+                            </fieldset>
+                        </div>
+                        <div id="submit">
+                            <button type="submit" id="submit-btn" onclick="return val()"> Log In </button>
+                            <p id="already">Don't have an Account? <span id="log-in"><a id="log-in-btn" href="../index.html">Sign up and post</a></span></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

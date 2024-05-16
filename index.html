@@ -32,9 +32,6 @@
                     <p class="header-msg">You <em>know</em> you want to. :)</p>
                 </div>
                 <div id="content-form">
-
-                    <!-- https://httpbin.org/post  http://localhost:5050/api/contacts -->
-
                     <form method="POST" action="javascript:void(0);" onsubmit="addContact()" >  
                         <div id="form-main">
                             <p id="msg">Let's do this!</p>
@@ -42,12 +39,12 @@
                             <fieldset id="fieldset">
                                 <div id="first">
                                     <label for="firstName">FIRST NAME:</label>
-                                    <input type="text" id="first-name" name="firstName" size="40" required minlength="2" maxlength="10" placeholder="2-10 chars">
+                                    <input type="text" id="first-name" name="firstName" size="40" required minlength="1" maxlength="10" placeholder="1-10 chars">
                                 </div>
                                 
                                 <div id="last">
                                     <label for="lastName">LAST NAME:</label>
-                                    <input type="text" id="last-name" name="lastName" size="40" required  minlength="3" maxlength="12" placeholder="3-12 chars">
+                                    <input type="text" id="last-name" name="lastName" size="40" required  minlength="1" maxlength="12" placeholder="1-12 chars">
                                 </div>
 
                                 <div id="email">
@@ -57,12 +54,12 @@
 
                                 <div id="number">
                                     <label for="phoneNumber">PHONE NUMBER:</label>
-                                    <input type="tel" id="phone-number" name="phoneNumber" size="40" required  pattern="(\d{3}-\d{3}-\d{4})" placeholder="123-456-7890">
+                                    <input type="tel" id="phone-number" name="phoneNumber" size="40" required  pattern="(\d{3}-?\d{3}-?\d{4})" placeholder="123-456-7890">
                                 </div>
                                 
                                 <div id="pass">
                                     <label for="password">PASSWORD:</label>
-                                    <input class="password" type="password" id="password" name="password" placeholder="password (8-16 chars)" size="40" required minlength="8"  maxlength="16">
+                                    <input class="password" type="password" id="password" name="password" placeholder="password (4-16 chars)" size="40" required minlength="4"  maxlength="16">
                                 </div>
                                 
                                 <!-- I don't need the confirmed password -->
@@ -91,7 +88,7 @@
                         </div>
                         <div id="submit">
                             <button type="submit" id="submit-btn" onclick="return val()"> Post </button>
-                            <p id="already">Already posted before? <span id="log-in"><a id="log-in-btn" href="#">Log in</a></span></p>
+                            <p id="already">Already posted before? <span id="log-in"><a id="log-in-btn" href="./pages/log-in.html">Log in</a></span></p>
                         </div>
                     </form>
                 </div>
