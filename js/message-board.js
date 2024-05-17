@@ -8,6 +8,8 @@ const postAction = {
   kudos: 0
 };
 
+let contactPosts = [];
+
 
 function populate() {
     const scrollpane = document.querySelector("#contacts-scroll");
@@ -15,7 +17,11 @@ function populate() {
     fetch(contacts_uri)
       .then(response => response.json())
       .then(data => {
-        for (let i = 0; i < Math.min(data.length, 20); i++) {
+
+        // Use this later.
+        contactPosts = data;
+
+        for (let i = data.length-1; i >= 0; i--) {
 
           // Create the card
           const card = document.createElement("div");
@@ -40,14 +46,14 @@ function populate() {
           userName.style.marginTop = "0px";
 
           const userEmail = document.createElement("p");
-          if (data[i].EmailHide) {
+          if (!data[i].EmailHide) {
             userEmail.textContent = emailValue;
           } else {
             userEmail.textContent = "User has hidden Email."
           }
           
           const userPhone = document.createElement("p");
-          if (data[i].PhoneHide) {
+          if (!data[i].PhoneHide) {
             userPhone.textContent = phoneNumberValue;
           } else {
             userPhone.textContent = "User has hidden Phone#."
