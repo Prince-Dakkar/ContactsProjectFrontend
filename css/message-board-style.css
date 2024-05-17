@@ -23,16 +23,19 @@ a {
     color: white;
 }
 #congrats {
-    font-size: calc(20px + 1vw);
+    font-size: calc(16px + 1vw);
     font-weight: bold;
     width: 80%;
-    margin-bottom: 60px;
+    margin-bottom: calc(20px + 1vw);
+    /* border: 2px solid black; */
 }
 #contacts-container {
     padding-top: 30px;
     border: 2px solid black;
     width: 80%;
     height: 60%;
+    margin-top: 0px;
+
 }
 #contacts-scroll {
     display: flex;

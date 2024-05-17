@@ -21,6 +21,8 @@
 *.xml
 ipch/
 obj/
+vscode/
+logs/
 *.http
 [Bb]in
 [Dd]ebug*/
